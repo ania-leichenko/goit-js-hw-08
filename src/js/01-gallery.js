@@ -3,9 +3,9 @@ import { galleryItems } from './gallery-items';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 // Change code below this line
-const galleryContainer = document.querySelector(".gallery");
+const galleryContainer = document.querySelector('.gallery');
 const images = createItemsMarkup(galleryItems);
-galleryContainer.insertAdjacentHTML("beforeend", images);
+galleryContainer.insertAdjacentHTML('beforeend', images);
 
 function createItemsMarkup() {
   return galleryItems
@@ -19,11 +19,11 @@ function createItemsMarkup() {
             />
        </a>`;
     })
-    .join("");
+    .join('');
 }
 
-const lightbox = new SimpleLightbox(".gallery a", {
-  captionsData: "alt",
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
   captionDelay: 250,
-  captionType: "alt",
+  captionType: 'alt',
 });
