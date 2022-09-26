@@ -4,7 +4,7 @@ import throttle from 'lodash.throttle';
 form.addEventListener('input', throttle(saveInputValues, 500));
 form.addEventListener('submit', submitFunc);
 
-const obj = {};
+let obj = {};
 reloadPage();
 
 function saveInputValues(e) {
@@ -14,12 +14,12 @@ function saveInputValues(e) {
 }
 
 function reloadPage() {
-  let saveValues = localStorage.getItem(STORAGE_KEY);
+  const saveValues = localStorage.getItem(STORAGE_KEY);
 
   if (saveValues) {
-    saveValues = JSON.parse(saveValues);
-    console.log(saveValues);
-    Object.entries(saveValues).forEach(([name, value]) => {
+    obj = JSON.parse(saveValues);
+    console.log(obj);
+    Object.entries(obj).forEach(([name, value]) => {
       form.elements[name].value = value;
     });
   }
