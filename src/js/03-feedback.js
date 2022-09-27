@@ -25,7 +25,7 @@ function reloadPage() {
   }
 }
 
-function submitFunc() {
+function submitFunc(e) {
   e.preventDefault();
   console.log(obj);
   localStorage.removeItem(STORAGE_KEY);
